@@ -1,73 +1,30 @@
 <html>
-    <script>
-
-
-let firstnumber=0;
-let operator="";
-
-function digits(digit){
-    document.getElementById("screen").value+=digit;
-
-}
-
-function operations(sign){
-    
-    if (sign=="C"){
-        document.getElementById("screen").value="";
-    }
-    if(sign=="+" || sign=="-" || sign=="x" || sign=="/"){
-            firstnumber=parseInt(document.getElementById("screen").value);
-            operator=sign;
-            document.getElementById("screen").value="";
-            //alert(firstnumber);
-    }
-    if(sign=="="){
-        //alert(firstnumber);
-        
-        if(operator=="+"){
-        let result=parseInt(document.getElementById("screen").value) + firstnumber;
-        document.getElementById("screen").value=result;
-        }
-        if(operator=="-"){
-        let result=firstnumber-parseInt(document.getElementById("screen").value);
-        document.getElementById("screen").value=result;
-        }
-        if(operator=="x"){
-        let result=parseInt(document.getElementById("screen").value) * firstnumber;
-        document.getElementById("screen").value=result;
-        }
-        if(operator=="/"){
-        let result=firstnumber/ parseInt(document.getElementById("screen").value);
-        document.getElementById("screen").value=result;
-        }
-    }
-}
-    </script>
-       <link rel="stylesheet" type="text/css" href="page_css1.css"> 
+    <script src="functions.js"></script>
+    <link rel="stylesheet" type="text/css" href="page_css1.css"> 
   <table>
       <tr colspan="3">
-        <input type="text" placeholder="0" id="screen" /> 
+        <input type="text" placeholder="0" id="screen" disabled /> 
       </tr>
                 <tr> 
-                    <td><input type="button" value="0" OnClick="digits('0')">  </td> 
-                    <td><input type=button value="1" OnClick="digits('1')">    </td> 
-                    <td><input type=button value="2" OnClick="digits('2')">    </td> 
+                    <td><input type="button" value="0" OnClick="nums('0')">  </td> 
+                    <td><input type=button value="1" OnClick="nums('1')">    </td> 
+                    <td><input type=button value="2" OnClick="nums('2')">    </td> 
                     <td><input type=button value="+" OnClick="operations('+')"> </td>
 
                 </tr> 
                     <tr>
-                        <td> <input type=button value="3" OnClick="digits('3')">    </td> 
-                        <td> <input type=button value="4" OnClick="digits('4')">    </td> 
-                        <td> <input type=button value="5" OnClick="digits('5')">    </td> 
+                        <td> <input type=button value="3" OnClick="nums('3')">    </td> 
+                        <td> <input type=button value="4" OnClick="nums('4')">    </td> 
+                        <td> <input type=button value="5" OnClick="nums('5')">    </td> 
                         <td> <input type=button value="-" OnClick="operations('-')"></td>
                     </tr> 
 
-                    <tr> <td><input type=button value="6" OnClick="digits('6')"></td> 
-                        <td><input type=button value="7" OnClick="digits('7')"></td> 
-                        <td><input type=button value="8" OnClick="digits('8')"></td> 
+                    <tr> <td><input type=button value="6" OnClick="nums('6')"></td> 
+                        <td><input type=button value="7" OnClick="nums('7')"></td> 
+                        <td><input type=button value="8" OnClick="nums('8')"></td> 
                         <td><input type=button value="x" OnClick="operations('x')"></td> 
                     </tr> 
-                    <tr> <td><input type=button value="9" OnClick="digits('9')"></td> 
+                    <tr> <td><input type=button value="9" OnClick="nums('9')"></td> 
                         <td><input type=button value="C" OnClick="operations('C')"></td> 
                         <td><input type=button value="=" OnClick="operations('=')"></td> 
                         <td><input type=button value="/" OnClick="operations('/')"></td> 
